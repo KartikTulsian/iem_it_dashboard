@@ -1,10 +1,8 @@
 "use server"
 
-import { revalidatePath } from "next/cache";
 import {
   AnnouncementSchema,
   AssignmentSchema,
-  ClassSchema,
   EventSchema,
   ExamSchema,
   ResultSchema,
@@ -232,13 +230,6 @@ export const updateTeacher = async (
         error: true,
       }
     }
-    const user = await clerk.users.updateUser(data.id, {
-      username: data.username,
-      ...(data.password !== "" && { password: data.password }),
-      firstName: data.name,
-      lastName: data.surname,
-      publicMetadata: { role: "teacher" },
-    });
 
     await prisma.teacher.update({
       where: {

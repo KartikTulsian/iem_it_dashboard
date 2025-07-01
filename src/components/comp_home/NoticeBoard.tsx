@@ -7,6 +7,7 @@ import moment from 'moment';
 import './Notice.css';
 import { notices } from '@/lib/dummydata';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface Notice {
   id: number;
@@ -25,7 +26,6 @@ const breakpointColumns = {
 export default function NoticeBoard() {
   const [time, setTime] = useState<string>(moment().format('h:mm:ss A'));
   const [date, setDate] = useState<string>(moment().format('dddd, MMMM Do YYYY'));
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
   const [selectedImage, setSelectedImage] = useState<Notice | null>(null);
 
   useEffect(() => {
@@ -50,9 +50,9 @@ export default function NoticeBoard() {
   }, []);
 
   return (
-    <div className={`noticeboard-container ${isDarkMode ? 'dark' : 'light'}`}>
+    <div className="noticeboard-container dark">
       <h2 className="notice-title text-xl sm:text-2xl md:text-3xl lg:text-4xl">
-        The What's-Happening-Here Hub
+        The What&apos;s-Happening-Here Hub
       </h2>
 
       {/* Date & Time */}
@@ -78,7 +78,7 @@ export default function NoticeBoard() {
                 whileHover={{ scale: 1.05 }}
                 onClick={() => setSelectedImage(notice)}
               >
-                <img src={notice.img} alt="Notice" className="notice-img" />
+                <Image width={1600} height={1600} src={notice.img} alt="Notice" className="notice-img" />
                 <h3>{notice.user}</h3>
                 <p>{notice.desc.length > 400 ? `${notice.desc.substring(0, 400)}...` : notice.desc}</p>
                 <Link
@@ -101,7 +101,9 @@ export default function NoticeBoard() {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setSelectedImage(null)} className="close-btn">✖</button>
             <div className="modal-image">
-              <img
+              <Image
+                width={1600}
+                height={1600}
                 src={selectedImage.img}
                 alt={selectedImage.user}
                 className="full-image"

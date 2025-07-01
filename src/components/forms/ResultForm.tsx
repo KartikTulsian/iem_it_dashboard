@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import React, { Dispatch, useActionState, useEffect, useMemo, useState } from 'react'
+import React, { Dispatch, useActionState, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import InputField from '../InputField';
 import { resultSchema, ResultSchema } from '@/lib/formValidationSchemas';
@@ -29,7 +29,6 @@ export default function ResultForm({
     handleSubmit,
     formState: { errors },
     setValue,
-    watch,
   } = useForm<ResultSchema>({
     resolver: zodResolver(resultSchema),
     // defaultValues: {

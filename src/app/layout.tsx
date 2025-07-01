@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { ClerkProvider } from '@clerk/nextjs'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import LayoutWrapper from "@/components/LayoutWrapper";
 
 const geistSans = Geist({

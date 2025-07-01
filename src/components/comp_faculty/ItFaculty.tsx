@@ -6,6 +6,7 @@ import "./faculty_gen.css";
 import ListMentors from "./ListMentors";
 import ListFaculty from "./ListFaculty";
 import Link from "next/link";
+import Image from "next/image";
 
 interface FacultyMember {
   id: string;
@@ -25,7 +26,9 @@ interface FacultyGroup {
 const FacultyNode: React.FC<{ faculty: FacultyMember }> = ({ faculty }) => (
   <div className="faculty-card group w-full max-w-[280px] md:max-w-[240px] flex flex-col items-center text-center hover:shadow-xl">
     <div className="faculty-card__img-container flex items-center justify-center gap-2 lg:relative">
-      <img
+      <Image
+        width={1700}
+        height={1700}
         src={faculty.img || "/default-profile.png"}
         alt={faculty.title}
         className="w-28 h-28 rounded-full border-4 border-[#7a2fe3] object-cover hover:scale-105 hover:rotate-1 transition"

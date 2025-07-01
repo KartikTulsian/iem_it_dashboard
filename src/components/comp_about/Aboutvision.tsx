@@ -2,6 +2,7 @@
 
 import React from 'react';
 import './vision.css';
+import Image from 'next/image';
 
 export default function Aboutvision() {
   return (
@@ -22,7 +23,9 @@ export default function Aboutvision() {
             </p>
           </div>
           <div className="image-section w-full lg:w-1/2 flex justify-center">
-            <img
+            <Image
+              width={1280}
+              height={720}
               src="./images/vision.jpg"
               alt="Vision"
               className="rounded shadow-lg max-w-[600px] w-full h-auto sm:max-w-[500px] md:max-w-[550px] lg:max-w-[600px]"
@@ -33,7 +36,9 @@ export default function Aboutvision() {
         {/* MISSION */}
         <div className="mission-section flex flex-row flex-wrap items-center justify-between gap-4 lg:gap-8 mt-12">
           <div className="image-section w-full lg:w-1/2 flex justify-center">
-            <img
+            <Image
+              width={855}
+              height={680}
               src="./images/mission.jpg"
               alt="Mission"
               className="rounded shadow-lg max-w-[600px] w-full h-auto sm:max-w-[500px] md:max-w-[550px] lg:max-w-[600px]"

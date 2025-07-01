@@ -1,5 +1,4 @@
 import Announcements from '@/components/Announcements'
-import BigCalendarContainer from '@/components/BigCalendarContainer'
 import EventCalendarContainer from '@/components/EventCalendarContainer'
 import RoutineCard from '@/components/RoutineCard'
 import prisma from '@/lib/prisma'

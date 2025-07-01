@@ -1,8 +1,8 @@
 'use client';
 
 import React from "react";
-import { Container } from "react-bootstrap";
 import "./Courses.css";
+import Image from "next/image";
 
 const classroom = {
   lg21: {
@@ -53,7 +53,7 @@ export default function InfrastructureCard() {
         <div className="infra-grid mt-6">
           {Object.values(classroom).map((item, index) => (
             <div className="infra-card" key={index}>
-              <img src={item.img} alt={item.title} className="infra-img" />
+              <Image width={1280} height={1020} src={item.img} alt={item.title} className="infra-img" />
 
               {/* Static text below image for small & medium */}
               <div className="block lg:hidden my-3 text-center text-yellow-400 font-semibold text-base sm:text-sm uppercase tracking-wide">
@@ -73,7 +73,7 @@ export default function InfrastructureCard() {
         <div className="infra-grid mt-6">
           {Object.values(lab).map((item, index) => (
             <div className="infra-card" key={index}>
-              <img src={item.img} alt={item.title} className="infra-img" />
+              <Image width={1280} height={1020} src={item.img} alt={item.title} className="infra-img" />
 
               {/* Static text below image for small & medium */}
               <div className="block lg:hidden my-3 text-center text-yellow-400 font-semibold text-base sm:text-sm uppercase tracking-wide">

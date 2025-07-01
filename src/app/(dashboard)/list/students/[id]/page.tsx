@@ -1,5 +1,4 @@
 import Announcements from '@/components/Announcements'
-import BigCalendarContainer from '@/components/BigCalendarContainer'
 import FormContainer from '@/components/FormContainer'
 import Performance from '@/components/Performance'
 import RoutineCard from '@/components/RoutineCard'
@@ -11,7 +10,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import React, { Suspense } from 'react'
-import { number } from 'zod'
 
 export default async function SingleStudentPage(props: { params: { id: string } }) {
   const { id } = await props.params;

@@ -6,6 +6,7 @@ import { Container } from 'react-bootstrap';
 import './homePart.css';
 import { deptCard } from '@/lib/dummydata';
 import Heading from '../Common/heading/Heading';
+import Image from 'next/image';
 
 export default function Habout() {
   const router = useRouter();
@@ -52,7 +53,9 @@ export default function Habout() {
                 className="card bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl text-center"
               >
                 <div className="icon_img w-20 h-20 rounded-full bg-violet-700 flex items-center justify-center mx-auto mb-4">
-                  <img
+                  <Image
+                    width={512}
+                    height={512}
                     src={val.cover}
                     alt={val.deptName}
                     className="w-full h-full object-cover rounded-full"

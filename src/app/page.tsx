@@ -1,6 +1,5 @@
 import Footer from '@/components/Common/Footer/Footer'
 import GoToTop from '@/components/Common/GotoTop/GoToTop'
-import Header from '@/components/Common/Header/Header'
 import Hero from '@/components/Common/hero/Hero'
 import Habout from '@/components/comp_home/Habout'
 import Hodmsg from '@/components/comp_home/Hodmsg'

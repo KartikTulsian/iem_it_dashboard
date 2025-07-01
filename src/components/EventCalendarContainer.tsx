@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import Calendar from 'react-calendar'
 import EventList from './EventList'
 import EventCalendar from './EventCalendar'
 

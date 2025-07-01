@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import './faculty_gen.css';
 import { mentorsList } from '@/lib/dummydata';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Types
 type MenteeData = (string | number)[];
@@ -47,7 +48,9 @@ const FacultyNode: React.FC<FacultyNodeProps> = ({ faculty, onClick }) => {
   return (
     <div className={`faculty-card group ${isHOD ? "hod-card" : ""}`} onClick={() => onClick(faculty)}>
       <div className="faculty-card__img-container flex items-center justify-center gap-2 lg:gap-0 lg:relative">
-        <img
+        <Image
+          width={700}
+          height={700}
           src={faculty.img || "/default-profile.png"}
           alt={faculty.title}
           className="w-28 h-28 rounded-full border-4 border-[#7a2fe3] object-cover hover:scale-105 hover:rotate-1 transition"
@@ -165,7 +168,9 @@ const MentorModal: React.FC<MentorModalProps> = ({ mentor, onClose }) => {
       >
         {/* Image - Hidden on small screens */}
         <div className="mentor-left hidden md:flex justify-center items-center flex-1 mb-4 md:mb-0">
-          <img
+          <Image
+            width={1700}
+            height={1700}
             src={mentor.img || '/default-profile.png'}
             alt={mentor.title}
             className="mentor-img w-[300px] h-[300px] object-cover rounded-lg shadow-lg"

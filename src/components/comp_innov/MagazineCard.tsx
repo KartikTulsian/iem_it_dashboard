@@ -1,6 +1,4 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
 import Heading from '../Common/heading/Heading';
 
 // PDF File Path

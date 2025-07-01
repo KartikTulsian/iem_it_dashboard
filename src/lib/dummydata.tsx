@@ -1,4 +1,4 @@
-export let homeAbout = [
+export const homeAbout = [
   {
     id: 1,
     cover: "../images/homeAbout/overtime.png",
@@ -18,7 +18,7 @@ export let homeAbout = [
     desc: "A state-of-the-art campus featuring advanced labs, modern classrooms, and collaborative learning spaces to foster innovation and growth.",
   },
 ];
-export let awrapper = [
+export const awrapper = [
   {
     cover:
       "https://img.icons8.com/external-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto/80/ffffff/external-graduation-education-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto.png",
@@ -43,7 +43,7 @@ export let awrapper = [
     title: "COURSES",
   },
 ];
-export let coursesCard = [
+export const coursesCard = [
   {
     id: 1,
     cover: "../images/courses/c1.png",
@@ -172,7 +172,7 @@ export let coursesCard = [
   },
 ];
 
-export let deptCard = [
+export const deptCard = [
   {
     id: 1,
     cover: "../images/dept/dept_1.png",
@@ -199,7 +199,7 @@ export let deptCard = [
   },
 ];
 
-export let placement = [
+export const placement = [
   {
     cover: "../images/companies/adobe.png",
     hoverCover: "../images/companies/adobe.png",
@@ -405,7 +405,7 @@ export let placement = [
   //   course: "2 Recruited",
   // },
 ];
-export let team = [
+export const team = [
   {
     cover: "./images/team/t1.webp",
     name: "Ph.D Adrian Molises",
@@ -448,7 +448,7 @@ export let team = [
   // },
 ];
 
-export let blog = [
+export const blog = [
   {
     id: 1,
     title: "Placements",
@@ -480,7 +480,7 @@ export let blog = [
     cover: "../images/blog/b6.webp",
   },
 ];
-export let testimonal = [
+export const testimonal = [
   {
     id: 1,
     name: "ROGER SCOTT",
@@ -504,7 +504,7 @@ export let testimonal = [
   },
 ];
 
-export let aboutprog = [
+export const aboutprog = [
   {
     id: 1,
     desc: "The Dept. of Information Technology, at the Institute of Engineering and Management (IEM), Salt Lake, Kolkata came into existence in 1999 with a Vision “To produce Creators of Creative Technological Solutions” for the benefit of Engineering, Science and Technology and the Nation on a larger scale. It has always strived to fulfill its Mission to impart Value Based Education and promote Research and Development at the International level. ",
@@ -531,7 +531,7 @@ export let aboutprog = [
   },
 ];
 
-export let peo = [
+export const peo = [
   {
     id: 1,
     title: "PEO1",
@@ -554,7 +554,7 @@ export let peo = [
   },
 ];
 
-export let po = [
+export const po = [
   {
     id: 1,
     title: "Engineering knowledge",
@@ -609,7 +609,7 @@ export let po = [
   {
     id: 11,
     title: "Project management and finance",
-    desc: "An ability to apply engineering and management knowledge and techniques to estimate time and resources needed to complete a technical project.",
+    desc: "An ability to apply engineering and management knowledge and techniques to estimate time and resources needed to compconste a technical project.",
   },
   {
     id: 12,
@@ -618,7 +618,7 @@ export let po = [
   },
 ];
 
-export let pso = [
+export const pso = [
   {
     id: 1,
     title: "PS01",
@@ -636,7 +636,7 @@ export let pso = [
   },
 ];
 
-export let innovation = [
+export const innovation = [
   // {
   //   title: "Patents",
   //   icon: "../images/innovation/patent.png",
@@ -657,7 +657,7 @@ export let innovation = [
   },
 ];
 
-export let magazine = [
+export const magazine = [
   {
     title: "Annual Report",
     icon: "../images/innovation/annual-report.png",
@@ -672,7 +672,7 @@ export let magazine = [
   },
 ];
 
-export let itprogfaculty = {
+export const itprogfaculty = {
   hod: [
     {
       id: "main",
@@ -708,7 +708,7 @@ export let itprogfaculty = {
   ],
 };
 
-export let mentorsList = {
+export const mentorsList = {
   hod: [
     {
       id: "main",
@@ -1264,7 +1264,7 @@ export let mentorsList = {
   ],
 };
 
-export let itfaculty = {
+export const itfaculty = {
   hod: [
     {
       id: "hod-1",
@@ -1456,7 +1456,7 @@ export let itfaculty = {
 };
 
 
-export let notices = [
+export const notices = [
   {
     id: 1,
     user: "IEMHACKS 3.0",
@@ -1595,7 +1595,7 @@ This event is not just about pictures; it’s about perspectives, emotions, and 
 ];
 
 
-export let publications = {
+export const publications = {
    faculty: {
   conf : [
     [{text: "Faculty: Conference publications", colspan:4}],
@@ -1669,7 +1669,7 @@ export let publications = {
 }
 }
 
-export let book_chapter = {
+export const book_chapter = {
   faculty: [
   [{text: "Faculty: Books Published", colspan: 4}],
   ["Sl. No.","Book Name","Authors","Publisher"],
@@ -1692,7 +1692,7 @@ export let book_chapter = {
   ]
 }
 
-export let achievements = [
+export const achievements = [
   {
     id: 1,
     title: "IEM PICKLEBALL TOURNAMENT S-1 – A Grand Success !",

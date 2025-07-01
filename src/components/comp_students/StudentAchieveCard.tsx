@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { achievements } from '@/lib/dummydata';
+import Image from 'next/image';
 
 interface Achievement {
   id: number;
@@ -42,7 +43,9 @@ export default function StudentAchieveCard() {
             whileHover={{ scale: 1.03 }}
             onClick={() => setSelected(achievement)}
           >
-            <img
+            <Image
+              width={1600}
+              height={1600}
               src={achievement.img}
               alt={achievement.title}
               className="w-full h-48 object-cover"
@@ -86,7 +89,9 @@ export default function StudentAchieveCard() {
 
               {/* Image Section */}
               <div className="w-full md:w-1/2 h-64 md:h-auto">
-                <img
+                <Image
+                  width={1600}
+                  height={1600}
                   src={selected.img}
                   alt={selected.title}
                   className="w-full h-full object-cover rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none"

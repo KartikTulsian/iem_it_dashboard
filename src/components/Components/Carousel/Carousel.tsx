@@ -5,15 +5,7 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, PanInfo, Transition, useMotionValue, useTransform } from "framer-motion";
 import React, { JSX } from "react";
-
-// replace icons with your own if needed
-import {
-  FiCircle,
-  FiCode,
-  FiFileText,
-  FiLayers,
-  FiLayout,
-} from "react-icons/fi";
+import Image from "next/image";
 export interface CarouselItem {
   title: string;
   description: string;
@@ -234,7 +226,9 @@ export default function Carousel({
               transition={effectiveTransition}
             >
               <div className={`${round ? "p-0 m-0" : "mb-0 p-2"}`}>
-                <img
+                <Image
+                  height={4000}
+                  width={6000}
                   src={item.image}
                   alt={item.title}
                   className={`w-full object-cover ${round ? "h-full rounded-full" : "rounded-[12px] h-[200px] sm:h-[250px] md:h-[300px]"}`}

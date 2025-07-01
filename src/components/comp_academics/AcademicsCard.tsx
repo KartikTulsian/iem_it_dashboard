@@ -7,6 +7,7 @@ import CurriculumCard from './CurriculumCard';
 import InfrastructureCard from './InfrastructureCard';
 import { homeAbout } from '@/lib/dummydata';
 import './academic_card.css';
+import Image from 'next/image';
 
 export default function AcademicsCard() {
   const [showRoutine, setShowRoutine] = useState(false);
@@ -40,7 +41,7 @@ export default function AcademicsCard() {
               }}
             >
               <div className="img">
-                <img src={val.cover} alt={val.title} />
+                <Image width={512} height={512} src={val.cover} alt={val.title} />
               </div>
               <div className="text">
                 <h2>{val.title}</h2>

@@ -7,6 +7,7 @@ import BookCard from './BookCard';
 import MagazineCard from './MagazineCard';
 import AlumniReportCard from './AlumniReportCard';
 import './Innovation.css';
+import Image from 'next/image';
 
 interface InnovationItem {
   title: string;
@@ -43,7 +44,9 @@ export default function InnovationIniCard() {
             onClick={() => handleCardClick(item)}
           >
             <div className="innovation-icon-container">
-              <img
+              <Image
+                width={512}
+                height={512}
                 src={item.icon}
                 alt={item.title || `icon-${index}`}
                 className="innovation-icon"
@@ -69,7 +72,9 @@ export default function InnovationIniCard() {
             onClick={() => handleCardClick(item)}
           >
             <div className="innovation-icon-container">
-              <img
+              <Image
+                width={512}
+                height={512}
                 src={item.icon}
                 alt={item.title || `mag-icon-${index}`}
                 className="innovation-icon"

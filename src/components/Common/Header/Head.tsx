@@ -3,6 +3,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import './Header.css' // Include this to retain your essential styles
+import Image from 'next/image'
 
 export default function Head() {
   return (
@@ -12,7 +13,7 @@ export default function Head() {
           {/* Logo and Tagline */}
           <div className="logo-tagline">
             <div className="logo">
-              <img src="/images/iem_logo.jpg" alt="iem_logo" />
+              <Image width={1280} height={1070} src="/images/iem_logo.jpg" alt="iem_logo" />
             </div>
             <div className="tagline">
               <h1 className="text-xl md:text-2xl">Department of Computer Science,</h1>

@@ -2,6 +2,7 @@ import React from "react";
 import { itfaculty } from "@/lib/dummydata";
 import "./faculty_gen.css";
 import Link from "next/link";
+import Image from "next/image";
 
 interface FacultyMember {
   id: string;
@@ -37,7 +38,9 @@ const FacultyNode: React.FC<{ faculty: FacultyMember }> = ({ faculty }) => {
   return (
     <div className={`faculty-card group ${isHOD ? "hod-card" : colorClass}`}>
       <div className="faculty-card__img-container flex items-center justify-center gap-2 lg:gap-0 lg:relative">
-        <img
+        <Image
+          width={1700}
+          height={1700}
           src={faculty.img || "/default-profile.png"}
           alt={faculty.title}
           className="w-28 h-28 rounded-full border-4 border-[#7a2fe3] object-cover hover:scale-105 hover:rotate-1 transition"

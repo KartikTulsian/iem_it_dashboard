@@ -29,18 +29,18 @@ export default function Hodmsg() {
               {/* Hover quote on md+ */}
               <p className="hod-quote hidden lg:block">
                 <i>
-                  "I invite you to explore our website and get more information about our distinguished academic programs, 
+                  &quot;I invite you to explore our website and get more information about our distinguished academic programs, 
                   state of the art facilities, and dedicated faculty members. It will give you our clear intention and commitment 
                   towards excellence and quality. Thanks to the efforts of our researchers, teachers, and our students too, we persevere 
-                  to play a primary role in our discipline, both nationally and internationally."
+                  to play a primary role in our discipline, both nationally and internationally.&quot;
                 </i>
               </p>
             </div>
 
             {/* Always show quote below image on small screens */}
             <p className="mt-4 lg:hidden text-sm text-gray-700 italic bg-blue-100 p-3 rounded border-l-4 border-blue-700 shadow-sm w-full max-w-md text-left">
-              "I invite you to explore our website and get more information about our distinguished academic programs, 
-              state of the art facilities, and dedicated faculty members..."
+              &quot;I invite you to explore our website and get more information about our distinguished academic programs, 
+              state of the art facilities, and dedicated faculty members...&quot;
             </p>
           </div>
 

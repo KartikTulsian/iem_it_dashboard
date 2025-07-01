@@ -22,7 +22,7 @@ export default function DepartmentEvents() {
 
         {/* Optional CTA */}
         <p className="mt-6 text-sm text-[#0a0f30]/80 italic">
-          We're working hard to bring you the latest updates. Stay tuned!
+          We&apos;re working hard to bring you the latest updates. Stay tuned!
         </p>
       </div>
     </section>

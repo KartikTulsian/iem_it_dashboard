@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Container, Row, Table } from 'react-bootstrap';
 import "./Courses.css"
 
 const routines: Record<string, any[][]> = {

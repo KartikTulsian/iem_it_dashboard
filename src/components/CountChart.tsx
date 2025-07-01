@@ -5,7 +5,6 @@ import React from 'react'
 import {
   RadialBarChart,
   RadialBar,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 

@@ -93,7 +93,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="https://iem-iete-students-forum.netlify.app/" target="_blank" rel="noopener noreferrer">
-                  IEM-IETE Student's Forum
+                  IEM-IETE Student&apos;s Forum
                 </Link>
               </li>
             </ul>

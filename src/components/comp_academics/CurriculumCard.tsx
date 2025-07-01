@@ -148,15 +148,6 @@ const syllabusFiles: Record<SemesterType, string> = {
 export default function CurriculumCard() {
   const [selectedSem, setSelectedSem] = useState<SemesterType  | null>(null);
   const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
-  const [pdfPages, setPdfPages] = useState<string[]>([]);
-  const [numPages, setNumPages] = useState<number | null>(null);
-
-  const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(0);
-
-  const [pageNumber, setPageNumber] = useState(1);
-  const [scale, setScale] = useState(1.3);
-
   useEffect(() => {
     if (selectedSem) {
       setSelectedPdf(syllabusFiles[selectedSem]);  // Update PDF when semester changes
@@ -304,58 +295,6 @@ export default function CurriculumCard() {
               style={{ border: 'none' }}
             />
           </div>
-          {/* <div className="pdf-viewer bg-white border border-gray-300 shadow-lg rounded-lg p-4 flex flex-col items-center space-y-4 w-full overflow-auto">
-            <Document
-              file={selectedPdf}
-              onLoadSuccess={({ numPages }) => setNumPages(numPages)}
-              loading="Loading PDF..."
-              onLoadError={(error) => console.error("PDF load error:", error)}
-            >
-              <Page pageNumber={pageNumber} scale={scale} />
-            </Document>
-
-            <div className="pdf-controls flex flex-wrap gap-2 justify-center items-center mt-4">
-              <button
-                onClick={() => pageNumber > 1 && setPageNumber(pageNumber - 1)}
-                className="flex items-center gap-1 px-4 py-2 bg-blue-500 text-white rounded-md shadow hover:bg-blue-600 transition"
-              >
-                <AiOutlineLeft /> Prev
-              </button>
-
-              <span className="text-sm sm:text-base px-2">
-                Page <strong>{pageNumber}</strong> of <strong>{numPages}</strong>
-              </span>
-
-              <button
-                onClick={() => pageNumber < numPages && setPageNumber(pageNumber + 1)}
-                className="flex items-center gap-1 px-4 py-2 bg-blue-500 text-white rounded-md shadow hover:bg-blue-600 transition"
-              >
-                Next <AiOutlineRight />
-              </button>
-
-              <button
-                onClick={() => setScale(scale + 0.2)}
-                className="flex items-center gap-1 px-3 py-2 bg-green-500 text-white rounded-md shadow hover:bg-green-600 transition"
-              >
-                <AiOutlineZoomIn /> Zoom In
-              </button>
-
-              <button
-                onClick={() => setScale(scale - 0.2)}
-                className="flex items-center gap-1 px-3 py-2 bg-yellow-500 text-white rounded-md shadow hover:bg-yellow-600 transition"
-              >
-                <AiOutlineZoomOut /> Zoom Out
-              </button>
-
-              <a
-                href={selectedPdf}
-                download
-                className="flex items-center gap-1 px-3 py-2 bg-gray-700 text-white rounded-md shadow hover:bg-gray-800 transition"
-              >
-                <AiOutlineDownload /> Download
-              </a>
-            </div>
-          </div> */}
         </Container>
       )}
     </section>

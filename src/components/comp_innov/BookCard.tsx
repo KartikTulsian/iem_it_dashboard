@@ -1,7 +1,6 @@
 'use client';
 
 import React, {useState} from 'react'
-import { Container, Row, Table, Button, Card } from "react-bootstrap";
 import { book_chapter } from "@/lib/dummydata";
 
 type BookType = 'faculty' | 'students';

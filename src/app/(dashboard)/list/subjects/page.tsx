@@ -93,8 +93,6 @@ export default async function SubjectListPage({
 
   // URL PARAMS CONDITION
 
-  const andConditions: Prisma.SubjectWhereInput[] = [];
-
   const query: Prisma.SubjectWhereInput = {};
 
   if (queryParams) {

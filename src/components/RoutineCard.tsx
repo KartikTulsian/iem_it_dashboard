@@ -108,8 +108,6 @@ const routines = {
     ]
 };
 
-type SemesterKey = keyof typeof routines;
-
 
 export default function RoutineCard({ semester }: { semester: string }) {
     const selectedSemester = semester?.toUpperCase() as keyof typeof routines;

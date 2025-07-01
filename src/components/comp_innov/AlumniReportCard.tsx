@@ -3,6 +3,7 @@
 import React from 'react';
 import Heading from '../Common/heading/Heading';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const alumniTalks = [
   { img: '/images/alumni_talk/Slide1.PNG', title: 'Legacy Builders', desc: 'Empowering the next generation with wisdom and experience.' },
@@ -33,7 +34,9 @@ export default function AlumniReportCard() {
             whileHover={{ scale: 1.02 }}
             className="flex flex-col justify-between h-full rounded-2xl overflow-hidden bg-white/10 backdrop-blur-md shadow-lg transition duration-300 ease-in-out hover:shadow-2xl hover:bg-white/20"
           >
-            <img
+            <Image
+              width={1280}
+              height={720}
               src={talk.img}
               alt={talk.title}
               className="w-full h-[220px] object-cover brightness-90 transition duration-300 ease-in-out hover:brightness-100"

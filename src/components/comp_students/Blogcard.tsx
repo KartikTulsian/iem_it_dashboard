@@ -10,6 +10,7 @@ import { blog } from '@/lib/dummydata';
 import './blog.css';
 import Heading from '../Common/heading/Heading';
 import DepartmentEvents from './DepartmentEvents';
+import Image from 'next/image';
 
 export default function Blogcard() {
     const [showPlacemants, setShowPlacements] = useState(false);
@@ -109,7 +110,7 @@ export default function Blogcard() {
                             }}
                         >
                             <div className="blog-img">
-                                <img src={val.cover} alt={val.title} />
+                                <Image width={1000} height={670} src={val.cover} alt={val.title} />
                                 <div className="img-overlay"></div>
                             </div>
                             <div className="blog-text">

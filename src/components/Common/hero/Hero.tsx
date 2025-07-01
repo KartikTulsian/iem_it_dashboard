@@ -21,15 +21,6 @@ export default function Hero() {
     { id: 4, img: '../images/bg_4.JPG', title: 'IEM HACKOASIS 1.0' },
   ];
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-  //   }, 2000);
-  //   return () => clearInterval(interval);
-  // }, []);
-
   const carouselItems: CarouselItem[] = images.map((image) => ({
     id: image.id,
     title: image.title,
@@ -73,7 +64,7 @@ export default function Hero() {
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-4 sm:justify-start">
               <Link href="/sign-in" className="primary-btn">
-                STUDENT'S CORNER<i className="fa fa-long-arrow-alt-right ml-2" />
+                STUDENT&apos;S CORNER<i className="fa fa-long-arrow-alt-right ml-2" />
               </Link>
               <Link href="/about" className="secondary-btn">
                 NOW MORE <i className="fa fa-long-arrow-alt-right ml-2" />
