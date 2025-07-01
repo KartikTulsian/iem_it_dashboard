@@ -1,0 +1,576 @@
+/* Curriculum Card */
+
+/* Curriculum Section Styling */
+.curriculum {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(90deg, #b3c6f3, #d8dff7);
+  color: #333;
+}
+
+/* Centering the Table */
+.curriculum-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Semester Selection Buttons */
+/* .sem-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 30px;
+} */
+
+.sem-tab {
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #5f75e5, #a3b0fc);
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+  box-shadow: 4px 6px 16px rgba(0, 0, 0, 0.15);
+  /* border: none; */
+}
+
+.sem-tab.active, .sem-tab:hover {
+  background: linear-gradient(135deg, #464fc4, #8988f0);
+  transform: scale(1.08);
+  box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.25);
+}
+.heading {
+  color: #1a3dab;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  padding-top: 30px;
+}
+.heading::after {
+  content: "";
+  width: 30%;
+  height: 4px;
+  background: #1a3dab;
+  display: block;
+  margin: 8px auto 0;
+}
+
+/* Table Styling */
+.curriculum-table {
+  width: 100%;
+  max-width: 1270px;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+/* Table Headings */
+.curriculum-table th {
+  background: linear-gradient(135deg, #6b7cd5, #9aaef3);
+  color: #fff;
+  font-weight: bold;
+  padding: 18px;
+  text-align: center;
+  font-size: 18px;
+  border-bottom: 2px solid #5058b4;
+}
+
+/* Table Cells */
+.curriculum-table td {
+  border: 1px solid rgba(0, 0, 0, 0.299);
+  padding: 16px;
+  text-align: center;
+  font-size: 16px;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Highlight Total Rows */
+.highlight-total {
+  background-color: #c6cef8;
+  font-weight: bold;
+  font-size: 18px;
+}
+.highlight-Btech {
+  background: #a5b0e5;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  /* border-radius: 5px; */
+}
+.even-row-c {
+  background: #e3e3ff;
+}
+
+.odd-row-c {
+  background: #ffffff;
+}
+/* Hover Effect */
+.curriculum-table td:hover {
+  background-color: #e2e9fd;
+  cursor: pointer;
+  /* transform: scale(1.02); */
+  transition: 0.2s ease-in-out;
+}
+
+/* Section Headers Styling */
+.section-heading {
+  background: linear-gradient(135deg, #5f79d8, #7e92ea);
+  color: white !important;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  margin: 25px 0 10px 0;
+  /* border-radius: 10px; */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}
+
+
+/* Add Hover Effect for Row Categories */
+.theory-row:hover, .practical-row:hover, .sessional-row:hover, .mandatory-row:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  /* transform: scale(1.01);
+  transition: 0.2s ease-in-out; */
+}
+
+/* Main container styling */
+.syll-container {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* PDF Controls */
+.pdf-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.pdf-controls button,
+.pdf-controls .btn-download {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #5f75e5;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+
+.pdf-controls button:hover,
+.pdf-controls .btn-download:hover {
+  background-color: #3546b1;
+}
+
+/* Center aligning text inside controls */
+.pdf-controls span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin: 0 10px;
+}
+
+
+/* PDF Viewer - prevents overflow and maintains scaling */
+/* .pdf-viewer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d0d0d0;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  overflow: auto;
+} */
+
+/* Page Wrapper - Ensures smooth transitions */
+.pdf-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  
+}
+
+.pdf-page-wrapper.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .pdf-controls {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .pdf-controls button {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+  
+  .pdf-viewer {
+    padding: 15px;
+  }
+  .sem-tab {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdf-controls {
+    gap: 5px;
+  }
+
+  .pdf-controls button {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  .pdf-viewer {
+    padding: 10px;
+  }
+}
+
+
+
+/* Routine card */
+
+/* Routine Section Styling */
+.routine {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(90deg, #b3f3b8, #d8e8f7);
+  color: #4a4a4a;
+}
+
+/* Heading */
+.routine-heading {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+/* Subheading */
+.routine-subheading {
+  font-size: 18px;
+  color: rgba(43, 42, 42, 0.8);
+  margin-bottom: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Year Selection Buttons */
+
+.year-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.year-tab {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #3bd373, #92eece);
+  color: #3b3289;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.3s;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.year-tab h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.year-tab.active,
+.year-tab:hover {
+  background: linear-gradient(135deg, #6a5bc3, #afb7fb);
+  transform: scale(1.05);
+  color: #fff;
+  /* box-shadow: 5px 8px 18px rgba(0, 0, 0, 0.2); */
+}
+
+/* Routine Table Container */
+.yr_routine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Wrapper to scale table responsively */
+.scaled-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/* Table Styling */
+.routine-table {
+  width: 100%;
+  max-width: 1000px;
+  border-collapse: collapse;
+  margin: auto;
+  box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 13px;
+}
+
+.routine-table th {
+  background: linear-gradient(135deg, #878de2, #c8c2f3);
+  color: white;
+  font-weight: bold;
+  padding: 16px;
+  text-align: center;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Day Headers */
+.highlight-day {
+  background: linear-gradient(135deg, #865ce6, #a5b0e5);
+  color: white !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  /* border-radius: 5px; */
+}
+
+/* Subtle Hover Effect */
+
+.routine-table td {
+  border: 1px solid rgba(0, 0, 0, 0.362);
+  padding: 14px;
+  text-align: center;
+  font-size: 16px;
+  color: #4a4a4a;
+  transition: background 0.3s ease-in-out;
+}
+
+.even-row {
+  background: #ededf9;
+}
+
+.odd-row {
+  background: #ffffff;
+}
+
+/* Hover Effect - Only Affected Cells Change Color */
+.routine-table td:hover {
+  background-color: #dbdbfb;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .year-tab {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+
+  .routine-table {
+    /* width: 95%; */
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .routine-heading {
+    font-size: 28px;
+  }
+
+  .routine-subheading {
+    font-size: 16px;
+  }
+
+  .year-tab {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .routine-table th,
+  .routine-table td {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* === Infrastructure Section === */
+.infrastructure {
+  text-align: center;
+  padding: 100px 0;
+  /* background: radial-gradient(circle, #263555, #283e80); */
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* === Title & Subtitle === */
+.infra-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #FFD700, #FF5733);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  word-wrap: break-word;
+  line-height: 1.2;
+}
+
+.infra-subtitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 50px 0 25px;
+  text-transform: uppercase;
+  color: #FFD700;
+  letter-spacing: 1.5px;
+}
+
+
+/* === Grid Layout === */
+.infra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* === Card Design (Glassmorphism + Neumorphism) === */
+.infra-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.121);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: inset 2px 2px 8px rgba(255, 255, 255, 0.1),
+              inset -2px -2px 8px rgba(0, 0, 0, 0.2),
+              0 0 18px rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.infra-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+  border-color: #FFD700;
+}
+
+/* === Image Styling === */
+.infra-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 18px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.infra-card:hover .infra-img {
+  transform: scale(1.1);
+}
+
+/* === Overlay Effect on Hover === */
+.infra-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background: rgba(0, 0, 0, 0.612);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  padding: 2px;
+  transform: translateY(100%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.infra-card:hover .infra-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.infra-overlay h4 {
+  color: #FFD700;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  text-shadow: 0px 0px 8px rgba(255, 215, 0, 0.9);
+}
+
+/* === Responsive Design === */
+@media screen and (max-width: 768px) {
+  .infrastructure {
+    padding: 60px 20px;
+  }
+
+  .infra-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .infra-title {
+    font-size: 2.5rem;
+  }
+
+  .infra-subtitle {
+    font-size: 1.8rem;
+  }
+
+  .infra-overlay h4 {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .infra-title {
+    font-size: 1.8rem;
+  }
+  .infra-subtitle {
+    font-size: 1.6rem;
+  }
+}

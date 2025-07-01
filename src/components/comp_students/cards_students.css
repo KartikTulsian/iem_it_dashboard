@@ -1,0 +1,193 @@
+/* General Styling */
+#materials-section {
+  padding: 50px;
+  background: linear-gradient(135deg, #0a0f30, #23395d);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Semester Tabs */
+.sem_tabs {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.sem-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.sem-tab {
+  padding: 14px 28px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  font-weight: bold;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.sem-tab:hover,
+.sem-tab.active {
+  background: linear-gradient(135deg, #0056b3, #0080ff);
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Study Materials & Lab Assignments Layout */
+.study-materials-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.study-mats-section,
+.lab-assign-section {
+  flex: 1;
+  min-width: 45%;
+}
+
+/* Section Headings */
+.study_mat_heading,
+.lab_heading {
+  color: #ffcc00 !important;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  animation: glow 1.5s infinite alternate;
+}
+
+.study_mat_subheading, .lab_subheading {
+  color: white;
+}
+
+/* Subject & Lab Cards */
+.subject-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.subject-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Folder Headers */
+.folder-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 14px;
+  background: linear-gradient(to right, #e3f2fd, #bbdefb);
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.folder-header:hover {
+  background: linear-gradient(to right, #bbdefb, #90caf9);
+  transform: scale(1.02);
+}
+.folder-icon {
+  margin-right: 12px;
+  color: #007bff;
+  font-size: 1.4rem;
+  
+}
+
+/* File List Animation */
+.file-list {
+  padding-left: 20px;
+  margin-top: 10px;
+  display: none; /* Initially hidden */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease-in-out;
+}
+
+.file-list.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInSlideUp 0.5s ease-in-out forwards;
+  
+}
+
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation for each file */
+.file-item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #eee;
+  padding: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.file-list.show .file-item {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInSlideUp 0.4s ease-in-out forwards;
+}
+.file-icon {
+  margin-right: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .study-materials-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .study-mats-section,
+  .lab-assign-section {
+    width: 90%;
+  }
+  .sem-buttons {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  #materials-section {
+    padding: 30px;
+  }
+  .sem-tab {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  .folder-header {
+    font-size: 1rem;
+    padding: 10px;
+  }
+  .file-item {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}

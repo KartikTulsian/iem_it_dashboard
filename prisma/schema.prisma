@@ -1,0 +1,230 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  // output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id       String @id
+  username String @unique
+}
+
+model Student {
+  id         String    @id
+  username   String    @unique
+  name       String
+  surname    String
+  email      String?   @unique
+  phone      String?   @unique
+  address    String
+  img        String?
+  bloodType  String
+  sex        UserSex
+  birthday   DateTime
+  createdAt  DateTime  @default(now())
+
+  yearId     Int
+  year       Year      @relation(fields: [yearId], references: [id])
+  semesterId Int
+  semester   Semester  @relation(fields: [semesterId], references: [id])
+
+  mentorId   String?
+  mentor     Teacher?   @relation("TeacherMentees", fields: [mentorId], references: [id])
+
+  attendances Attendance[]
+  results     Result[]
+}
+
+model Teacher {
+  id        String    @id
+  username  String    @unique
+  name      String
+  surname   String
+  email     String?   @unique
+  phone     String?   @unique
+  address   String
+  img       String?
+  bloodType String
+  sex       UserSex
+  birthday  DateTime
+  createdAt DateTime  @default(now())
+
+  subjects     Subject[]
+  mentees      Student[] @relation("TeacherMentees")
+  classTeacherOf Year[]  @relation("ClassTeacherOfYear")
+}
+
+model Year {
+  id           Int           @id @default(autoincrement())
+  name         String        @unique // e.g., "1st Year", "2nd Year"
+  students     Student[]
+  announcements Announcement[]
+  events       Event[]
+
+  classTeacherId String?     // Nullable foreign key (no class teacher for 1st Year)
+  classTeacher   Teacher?    @relation("ClassTeacherOfYear", fields: [classTeacherId], references: [id])
+}
+
+
+model Semester {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique // e.g., "Semester 1", "Semester 2"
+  subjects Subject[]
+  students Student[]
+  result   Result[]
+  announcements Announcement[]
+  events       Event[]
+}
+
+model Subject {
+  id          Int               @id @default(autoincrement())
+  name        String
+  code        String            @unique
+  semesterId  Int
+  semester    Semester          @relation(fields: [semesterId], references: [id])
+  teachers    Teacher[]
+  components  SubjectComponent[] // Instead of exams/assignments directly
+  attendance  Attendance[]
+}
+
+
+model SubjectComponent {
+  id         Int              @id @default(autoincrement())
+  type       ComponentType    // THEORY or LAB
+  subjectId  Int
+  subject    Subject          @relation(fields: [subjectId], references: [id])
+  
+  exams       Exam[]
+  assignments Assignment[]
+  materials   StudyMaterial[]
+}
+
+model Exam {
+  id                  Int               @id @default(autoincrement())
+  title               String
+  startTime           DateTime
+  endTime             DateTime
+
+  subjectComponentId  Int
+  subjectComponent    SubjectComponent @relation(fields: [subjectComponentId], references: [id])
+}
+
+model Assignment {
+  id                  Int               @id @default(autoincrement())
+  title               String
+  startDate           DateTime
+  dueDate             DateTime
+
+  subjectComponentId  Int
+  subjectComponent    SubjectComponent @relation(fields: [subjectComponentId], references: [id])
+}
+
+model StudyMaterial {
+  id                  Int               @id @default(autoincrement())
+  title               String
+  description         String?
+  url                 String?           // Now optional (nullable)
+
+  subjectComponentId  Int
+  subjectComponent    SubjectComponent @relation(fields: [subjectComponentId], references: [id])
+}
+
+model Result {
+  id          Int      @id @default(autoincrement())
+  gpa         Float    // Overall GPA for the semester
+  remarks     String?
+  url         String?  // Optional URL for PDF or image
+
+  studentId   String
+  student     Student  @relation(fields: [studentId], references: [id])
+  semesterId  Int
+  semester    Semester @relation(fields: [semesterId], references: [id])
+}
+
+
+model Attendance {
+  id         Int      @id @default(autoincrement())
+  date       DateTime
+  present    Boolean
+
+  studentId  String
+  student    Student   @relation(fields: [studentId], references: [id])
+  subjectId  Int
+  subject    Subject   @relation(fields: [subjectId], references: [id])
+}
+
+model Event {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  startTime   DateTime
+  endTime     DateTime
+  img         String?
+
+  yearId     Int?
+  semesterId Int?
+
+  year       Year?     @relation(fields: [yearId], references: [id])
+  semester   Semester? @relation(fields: [semesterId], references: [id])
+
+}
+
+model Announcement {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  date        DateTime
+
+  yearId     Int?
+  semesterId Int?
+
+  year       Year?     @relation(fields: [yearId], references: [id])
+  semester   Semester? @relation(fields: [semesterId], references: [id])
+
+}
+
+model Notification {
+  id         Int      @id @default(autoincrement())
+  message    String
+  read       Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  studentId  String?
+  teacherId  String?
+}
+
+
+enum Day {
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+}
+
+enum ComponentType {
+  THEORY
+  LAB
+}
+
+enum UserSex {
+  MALE
+  FEMALE
+}
+
+
+// enum UserRole {
+//   STUDENT
+//   TEACHER
+//   ADMIN
+// }

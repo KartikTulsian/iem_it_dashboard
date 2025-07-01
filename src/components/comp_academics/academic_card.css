@@ -1,0 +1,52 @@
+.abouthome {
+  background-color: #f8f8f8;
+}
+
+.abouthome .item {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: left;
+  transition: 0.4s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 15px;
+}
+
+.abouthome .item:hover {
+  background-color: #7a2fe3;
+  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(122, 47, 227, 0.2);
+}
+
+.abouthome .item:hover p {
+  color: #fff;
+}
+
+.abouthome .img {
+  width: 70px;
+  height: 70px;
+}
+
+.abouthome .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.abouthome .text h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.abouthome .text p {
+  color: #999999;
+  font-size: 15px;
+  line-height: 1.5;
+}

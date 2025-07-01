@@ -1,0 +1,267 @@
+/* General Styling */
+.noticeboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Dark Mode */
+.noticeboard-container.dark {
+  background: linear-gradient(135deg, #383860, #32405f);
+  color: #ffffff;
+}
+
+.noticeboard-container.light {
+  background: linear-gradient(135deg, #f5f7fa, #e0e5ec);
+  color: #000000;
+}
+
+
+/* Header Styling */
+.noticeboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.319);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+/* Masonry Grid */
+.masonry-grid {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.masonry-grid-column {
+  background-clip: padding-box;
+}
+
+/* Notice Card */
+.notice-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+  margin-bottom: 25px;
+  color: inherit;
+}
+
+.notice-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+.notice-card h3 {
+    margin: 10px 0;
+    font-size: 1.4rem;
+}
+.notice-card p{
+  font-size: 1rem;
+}
+.notice-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    margin-top: 60px;
+    position: relative;
+}
+.notice-title::after {
+    content: "";
+    width: 300px;
+    height: 4px;
+    background: #ffffff;
+    display: block;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+/* Image */
+/* Adjust Image Size */
+.notice-img {
+  width: 100%;
+  height: 220px; /* Increased size for better visibility */
+  border-radius: 10px;
+  object-fit: cover;
+  border: 3px solid rgb(11, 11, 60);
+}
+
+/* Fix Link Overflow - Shorten Long URLs */
+.notice-link {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #ff512f;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.notice-link:hover {
+  text-decoration: underline;
+  color: #fbae4d;
+}
+
+/* Notice Actions */
+.notice-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.notice-actions button {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.notice-actions button:hover {
+  background: linear-gradient(135deg, #dd2476, #ff512f);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: auto;
+  padding: 20px;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(40, 40, 60, 0.9);
+  padding: 1.5rem 1rem;
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  width: 95vw;
+  max-width: 960px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-image {
+  width: 100%;
+}
+
+.full-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.modal-details {
+  width: 100%;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.modal-details h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.modal-details p {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+  color: #dddddd;
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+
+.close-btn {
+  position: sticky;
+  top: 0;
+  align-self: flex-end;
+  background: rgba(0, 0, 0, 0.362);
+  border: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 50%;
+  z-index: 1001;
+  margin-bottom: 10px;
+}
+
+.modal-details a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #ffb84d;
+  font-weight: bold;
+  word-break: break-all;
+  text-decoration: underline;
+}
+
+
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-content {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .modal-image, .modal-details {
+    width: 50%;
+  }
+
+  .modal-details {
+    text-align: left;
+    padding-left: 1.5rem;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    margin-bottom: 0;
+  }
+}

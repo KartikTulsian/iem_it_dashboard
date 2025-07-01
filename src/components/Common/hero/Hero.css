@@ -1,0 +1,84 @@
+.hero {
+  /* background-image: url("../../../../public/images/static_bg1.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; */
+  width: 100%;
+  height: auto;
+  transition: background-image 1s ease-in-out;
+}
+
+.desc_hero {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.desc_hero:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.desc_hero h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #f0eeee;
+  text-align: left;
+}
+
+.desc_hero p {
+  font-size: 1.1rem;
+  color: #bbbbbb;
+}
+
+.desc_hero h3 {
+  color: #fff;
+  text-align: left;
+  font-size: 1.6rem;
+}
+
+.hero #heading {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #7a2fe3, #5a1fbf);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.primary-btn:hover {
+  background: white;
+  color: #7a2fe3;
+}
+
+.secondary-btn {
+  background: transparent;
+  color: #a4a4a4;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  border: 2px solid #a4a4a4;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.secondary-btn:hover {
+  background: #7a2fe3;
+  color: white;
+}
+
+.switching_section {
+  position: relative;
+}

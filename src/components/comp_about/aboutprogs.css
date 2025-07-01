@@ -1,0 +1,163 @@
+/* About Program section background and headline underline */
+.program {
+  background: linear-gradient(to right, #331444, #7a2fe3);
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+/* Underline below heading */
+.headline::after {
+  content: "";
+  width: 20%;
+  height: 4px;
+  background: #ffcc00;
+  display: block;
+  margin: 8px auto 0;
+}
+
+/* Container for all items */
+.items_prog {
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Individual paragraph styling */
+.item_p {
+  padding: 15px 20px;
+  font-size: 1rem;
+  line-height: 1.75;
+  text-align: justify;
+  border-left: 4px solid #ffcc00;
+  margin-bottom: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.item_p:hover {
+  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* hprogs */
+/* General Styling */
+.hprogs {
+  background: #f8f9fa;
+}
+
+.hprogs section {
+  margin-bottom: 50px;
+}
+
+.prog_headline {
+  text-align: left;
+  font-size: 28px;
+  font-weight: bold;
+  color: #1a3dab;
+  margin-bottom: 30px;
+  border-left: 5px solid #7a2fe3;
+  padding-left: 10px;
+}
+
+/* Flexbox Structure */
+.p_items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.p_item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  padding: 10px 20px;
+  min-height: 140px;
+  background: linear-gradient(to right, #ffffff, #f2f3f7);
+  border-radius: 10px;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Heading Styles */
+.p_item h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a3dab;
+  margin-bottom: 5px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* Description Styles */
+.p_item p {
+  color: #444;
+  font-size: 16px;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* Decorative bar on left */
+.p_item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: #7a2fe3;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Hover Effects ONLY on screens > 768px */
+@media (min-width: 1025px) {
+  .p_item:hover {
+    background: #7a2fe3;
+    color: #fff !important;
+    transform: scale(1.02);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .p_item:hover h2,
+  .p_item:hover p,
+  .p_item:hover span {
+    color: #fff !important;
+  }
+
+  .p_item:hover::before {
+    width: 5px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .prog_headline {
+    text-align: center;
+  }
+
+  .p_items {
+    margin-top: 30px;
+  }
+
+  .p_item {
+    padding: 15px;
+    min-height: auto;
+    transform: none !important; /* Prevent hover scale */
+  }
+
+  .p_item h2 {
+    font-size: 17px;
+  }
+
+  .p_item p {
+    font-size: 14px;
+  }
+}

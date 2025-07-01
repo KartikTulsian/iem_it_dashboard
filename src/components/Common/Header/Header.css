@@ -1,0 +1,151 @@
+.head {
+  padding: 20px 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* Custom fallback for logo-tagline layout */
+.logo-tagline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo img {
+  height: 104px;
+  margin: 12px 0;
+}
+
+.tagline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tagline h1 {
+  font-size: 35px;
+  font-weight: 900;
+  /* Let Tailwind handle font sizes */
+}
+
+.head .icon {
+  margin-left: 10px;
+}
+
+/* HEADER */
+
+.site-header {
+  background-color: rgba(255, 255, 255, 0.678);
+  margin: 0 30px;
+  position: relative;
+  z-index: 10;
+}
+
+.site-header ul li {
+  list-style-type: none;
+  font-size: 1.1rem;
+}
+
+.site-header ul {
+  padding: 0 20px;
+}
+
+.site-header ul li a {
+  color: #7a2fe3;
+  font-weight: 580;
+  transition: 0.4s;
+  text-decoration: none;
+}
+
+.site-header ul li a:hover {
+  color: #622bd3;
+}
+
+/* .sign-button {
+  background-color: #7a2fe3;
+  color: #fff;
+  padding: 28px 70px;
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: background 0.3s ease;
+  text-decoration: none;
+} */
+
+.sign-button {
+  background-color: #7a2fe3;
+  color: #fff;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 70px;
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.sign-button:hover {
+  background-color: #622bd3;
+}
+
+/* Remove background or outline from icon itself */
+.site-header button i {
+  background: transparent;
+  color: white;
+  font-size: 1.675rem; /* 30px */
+  line-height: 1;
+}
+
+/* Mobile nav styles */
+.mobile-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #7a2fe3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 1rem;
+  z-index: 10;
+  border-top: 1px solid #fff2;
+  transition: all 0.3s ease-in-out;
+}
+
+.hidden.mobile-nav {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mobile-nav li a {
+  color: #fff !important;
+}
+
+/* Responsive Overrides */
+@media screen and (max-width: 768px) {
+  .site-header {
+    margin: 0;
+    background-color: #7a2fe3;
+  }
+
+  .sign-button {
+    padding: 0 24px;
+    clip-path: none;
+  }
+
+  .site-header ul li {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .sign-button {
+    padding: 0 40px;
+  }
+}

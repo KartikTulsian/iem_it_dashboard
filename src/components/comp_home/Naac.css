@@ -1,0 +1,136 @@
+/* NAAC Accreditation */
+.naac_acre {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #eef2f6, #dce1f3);
+}
+
+.naac_section {
+  display: flex;
+  align-items: stretch; /* Ensures equal height for both sections */
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Content Section */
+.txt-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 35px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  z-index: 1;
+}
+
+.txt-section:hover {
+  background: linear-gradient(135deg, #5a48c5, #3e2ba1);
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.txt-section:hover p {
+  color: #f3f3f3;
+}
+
+/* Creates a smooth highlight effect */
+.txt-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.txt-section:hover::before {
+  left: 100%;
+}
+
+/* Image Section */
+.cert-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  /* background: #fff; */
+  /* border-radius: 12px; */
+  /* box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); */
+  /* padding: 20px; */
+}
+
+.cert-section img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.cert-section img:hover {
+  transform: scale(1.07);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Title Styling */
+.naac-title {
+  color: #1a237e;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  position: relative;
+}
+
+.naac-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #1a237e;
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Text Styling */
+.txt-section p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.8;
+  transition: color 0.4s ease-in-out;
+  z-index: 1;
+  position: relative;
+}
+
+/* Responsive Styling */
+@media (max-width: 992px) {
+  .naac_section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cert-section {
+    order: -1;
+    margin-bottom: 30px;
+  }
+
+  .txt-section {
+    padding: 25px;
+  }
+}
