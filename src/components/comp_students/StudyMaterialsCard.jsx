@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaFolder, FaFilePdf, FaChevronDown, FaChevronRight } from "react-icons/fa";
 import Heading from "../Common/heading/Heading";
 import "./cards_students.css";
+import Link from "next/link";
 
 const semesters = ["4TH SEM", "6TH SEM", "8TH SEM"];
 
@@ -131,7 +132,7 @@ export default function StudyMaterialsCard() {
                   </div>
                   <div className={`file-list ${expandedSubjects[key] ? "show" : ""}`}>
                     {files.map((file, index) => (
-                      <a
+                      <Link
                         key={index}
                         href={file.link}
                         target="_blank"
@@ -139,7 +140,7 @@ export default function StudyMaterialsCard() {
                         className="file-item"
                       >
                         <FaFilePdf className="file-icon" /> {file.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -166,7 +167,7 @@ export default function StudyMaterialsCard() {
                   </div>
                   <div className={`file-list ${expandedSubjects[key] ? "show" : ""}`}>
                     {files.map((file, index) => (
-                      <a
+                      <Link
                         key={index}
                         href={file.link}
                         target="_blank"
@@ -174,7 +175,7 @@ export default function StudyMaterialsCard() {
                         className="file-item"
                       >
                         <FaFilePdf className="file-icon" /> {file.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>

@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import './homePart.css'; // keep for quote animation and custom styles
+import Link from 'next/link';
 
 export default function Hodmsg() {
   return (
@@ -53,12 +54,12 @@ export default function Hodmsg() {
               Institute of Engineering and Management<br />
               Y-12 Salt Lake Electronics Complex, Sector – V, Kolkata – 700091<br />
               <span className="font-semibold">Email ID:</span>{' '}
-              <a
+              <Link
                 href="mailto:moutushi.singh@iem.edu.in"
                 className="text-blue-600 font-semibold hover:underline"
               >
                 moutushi.singh@iem.edu.in
-              </a>
+              </Link>
             </p>
           </div>
         </div>

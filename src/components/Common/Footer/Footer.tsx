@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import './Footer.css';
+import Link from 'next/link';
 
 export default function Footer() {
   const router = useRouter();
@@ -85,15 +86,15 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul>
               <li>
-                <a href="https://iem.edu.in/" target="_blank" rel="noopener noreferrer">IEM Website</a>
+                <Link href="https://iem.edu.in/" target="_blank" rel="noopener noreferrer">IEM Website</Link>
               </li>
               <li>
-                <a href="https://www.iemlearning.com/" target="_blank" rel="noopener noreferrer">IEM Learning</a>
+                <Link href="https://www.iemlearning.com/" target="_blank" rel="noopener noreferrer">IEM Learning</Link>
               </li>
               <li>
-                <a href="https://iem-iete-students-forum.netlify.app/" target="_blank" rel="noopener noreferrer">
+                <Link href="https://iem-iete-students-forum.netlify.app/" target="_blank" rel="noopener noreferrer">
                   IEM-IETE Student's Forum
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

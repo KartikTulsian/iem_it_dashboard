@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { CldUploadWidget } from "next-cloudinary";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function StudyMaterialForm({
   type,
@@ -140,13 +141,13 @@ export default function StudyMaterialForm({
                 <span>Upload PDF/Image</span>
               </div>
               {uploadedUrl && (
-                <a
+                <Link
                   href={uploadedUrl}
                   target="_blank"
                   className="text-blue-500 text-xs underline mt-1"
                 >
                   View Uploaded File
-                </a>
+                </Link>
               )}
             </div>
           )}

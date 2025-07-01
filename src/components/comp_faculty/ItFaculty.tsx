@@ -5,6 +5,7 @@ import { itprogfaculty } from "@/lib/dummydata";
 import "./faculty_gen.css";
 import ListMentors from "./ListMentors";
 import ListFaculty from "./ListFaculty";
+import Link from "next/link";
 
 interface FacultyMember {
   id: string;
@@ -38,14 +39,14 @@ const FacultyNode: React.FC<{ faculty: FacultyMember }> = ({ faculty }) => (
           transition-all duration-300"
       >
         {faculty.linkedin && (
-          <a href={faculty.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon">
+          <Link href={faculty.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon">
             <i className="fa-brands fa-linkedin" />
-          </a>
+          </Link>
         )}
         {faculty.gscholar && (
-          <a href={faculty.gscholar} target="_blank" rel="noopener noreferrer" className="social-icon">
+          <Link href={faculty.gscholar} target="_blank" rel="noopener noreferrer" className="social-icon">
             <i className="fa-brands fa-google-scholar" />
-          </a>
+          </Link>
         )}
       </div>
     </div>

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import './faculty_gen.css';
 import { mentorsList } from '@/lib/dummydata';
+import Link from 'next/link';
 
 // Types
 type MenteeData = (string | number)[];
@@ -53,24 +54,24 @@ const FacultyNode: React.FC<FacultyNodeProps> = ({ faculty, onClick }) => {
         />
         <div className="faculty-card__info absolute left-full mx-1  lg:opacity-0 lg:invisible lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:left-[110%] transition-all duration-300">
           {faculty.linkedin && (
-            <a
+            <Link
               href={faculty.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon"
             >
               <i className="fa-brands fa-linkedin" />
-            </a>
+            </Link>
           )}
           {faculty.gscholar && (
-            <a
+            <Link
               href={faculty.gscholar}
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon"
             >
               <i className="fa-brands fa-google-scholar" />
-            </a>
+            </Link>
           )}
         </div>
       </div>
@@ -178,14 +179,14 @@ const MentorModal: React.FC<MentorModalProps> = ({ mentor, onClose }) => {
 
           <div className="mentor-links mt-4 mb-6">
             {mentor.linkedin && (
-              <a href={mentor.linkedin} target="_blank" rel="noopener noreferrer">
+              <Link href={mentor.linkedin} target="_blank" rel="noopener noreferrer">
                 <i className="fa-brands fa-linkedin"></i>
-              </a>
+              </Link>
             )}
             {mentor.gscholar && (
-              <a href={mentor.gscholar} target="_blank" rel="noopener noreferrer">
+              <Link href={mentor.gscholar} target="_blank" rel="noopener noreferrer">
                 <i className="fa-brands fa-google-scholar"></i>
-              </a>
+              </Link>
             )}
           </div>
 

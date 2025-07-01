@@ -1,6 +1,7 @@
 import React from "react";
 import { itfaculty } from "@/lib/dummydata";
 import "./faculty_gen.css";
+import Link from "next/link";
 
 interface FacultyMember {
   id: string;
@@ -43,24 +44,24 @@ const FacultyNode: React.FC<{ faculty: FacultyMember }> = ({ faculty }) => {
         />
         <div className="faculty-card__info absolute left-full mx-1  lg:opacity-0 lg:invisible lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:left-[110%] transition-all duration-300">
           {faculty.linkedin && (
-            <a
+            <Link
               href={faculty.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon"
             >
               <i className="fa-brands fa-linkedin" />
-            </a>
+            </Link>
           )}
           {faculty.gscholar && (
-            <a
+            <Link
               href={faculty.gscholar}
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon"
             >
               <i className="fa-brands fa-google-scholar" />
-            </a>
+            </Link>
           )}
         </div>
       </div>

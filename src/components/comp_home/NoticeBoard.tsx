@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import moment from 'moment';
 import './Notice.css';
 import { notices } from '@/lib/dummydata';
+import Link from 'next/link';
 
 interface Notice {
   id: number;
@@ -80,7 +81,7 @@ export default function NoticeBoard() {
                 <img src={notice.img} alt="Notice" className="notice-img" />
                 <h3>{notice.user}</h3>
                 <p>{notice.desc.length > 400 ? `${notice.desc.substring(0, 400)}...` : notice.desc}</p>
-                <a
+                <Link
                   href={notice.link}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -88,7 +89,7 @@ export default function NoticeBoard() {
                   data-full-url={notice.link}
                 >
                   {notice.link.length > 30 ? `${notice.link.substring(0, 27)}...` : notice.link}
-                </a>
+                </Link>
               </motion.div>
             ))}
           </Masonry>
@@ -109,13 +110,13 @@ export default function NoticeBoard() {
             <div className="modal-details">
               <h2>{selectedImage.user}</h2>
               <p>{selectedImage.desc}</p>
-              <a
+              <Link
                 href={selectedImage.link}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {selectedImage.link}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
